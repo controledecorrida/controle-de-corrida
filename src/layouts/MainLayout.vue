@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <!-- <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -11,25 +11,15 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title> Quasar App </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+        <q-item-label header> Essential Links </q-item-label>
 
         <EssentialLink
           v-for="link in essentialLinks"
@@ -42,75 +32,96 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-  </q-layout>
+  </q-layout> -->
+
+  <!-- Imagem de Abertura -->
+  <div class="image">
+    <!-- <h1>RotaFinanceira</h1> -->
+    <div class="logo"></div>
+  </div>
+  <!-- Principal -->
+  <div class="q-pa-lg text-center">
+    <!-- Cabeçalho -->
+    <div class="header">
+      <h2 class="q-pa-none q-ma-none">
+        Lorem ipsum dolor sit amet
+      </h2>
+      <h4 class="text-subtitle1 q-pa-noneq-pa-none q-ma-none">Lorem ipsum dolor sit amet</h4>
+    </div>
+    <!-- Menu -->
+    <div class="nav-menu row">
+      <button class="btn btn-secondary col">Registrar</button>
+      <button class="btn btn-primary col">Entrar</button>
+      <button class="btn btn-secondary col-12">Conectar com o Google</button>
+    </div>
+  </div>
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
-
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-  name: 'MainLayout',
-
-  components: {
-    EssentialLink
-  },
-
-  setup () {
-    const leftDrawerOpen = ref(false)
-
-    return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
-  }
-})
+  name: "MainLayout",
+});
 </script>
+
+<style>
+.image {
+  display: flex;
+  height: 523px;
+  background-image: url("../../public/images/image62.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  padding-bottom: 24px;
+}
+
+.logo {
+  display: block;
+  width: 230px;
+  height: 30px;
+  background-image: url("../../public/images/logo.svg");
+  background-repeat: no-repeat;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 22px;
+  color: #293E2F;
+}
+
+h4 {
+  color: #293E2F;
+}
+
+.nav {
+  padding: 27px;
+}
+
+.nav-menu {
+  gap: 16px;
+}
+
+.btn {
+  border: none;
+  align-items: center;
+  padding: 16px 24px;
+
+  height: 56px;
+
+  border-radius: 60px;
+}
+
+.btn-primary {
+  background: #8CE95F;
+}
+
+.btn-secondary {
+  background: #E7F1E9;
+}
+</style>
